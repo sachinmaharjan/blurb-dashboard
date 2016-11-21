@@ -644,3 +644,9 @@ input[type=submit].twitter:after {
   text-align: center;
   font-size: 3rem;
 }
+
+.icon.logo-main--sm {
+  height: 80px;
+  width: 83px;
+  background: url(../img/sprites-s7ab32b3340.png) 0 -223px no-repeat;
+}

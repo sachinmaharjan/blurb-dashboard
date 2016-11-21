@@ -1,5 +1,4 @@
 import React from 'react';
-import { render } from 'react-dom';
 import { getFunName } from '../helpers';
 
 
@@ -10,15 +9,13 @@ class BlurbDashboard extends React.Component {
   // }
   goToDashboard(event) {
     event.preventDefault();
-    console.log("You have change the url");
-    console.log(this.dashboardInput.value);
     // grab the txt from box
-
-
+    const dashboardId = this.dashboardInput.value;
     //transition to /dashboard/dashboardId
+    this.context.router.transitionTo(`/dashboard/${dashboardId}`);
   }
+
   render() {
-    //jsx you can only return one element like form
     return (
       <form className='blurb-dashboard' onSubmit={(e) => this.goToDashboard(e)}>
         { /* jsx  render*/ }
@@ -28,6 +25,10 @@ class BlurbDashboard extends React.Component {
       </form>
     )
   }
+}
+
+BlurbDashboard.contextTypes = {
+  router: React.PropTypes.object
 }
 
 export default BlurbDashboard;

@@ -1,11 +1,9 @@
-
-import React from 'react';
-
+import React from 'react'
 import { render } from 'react-dom';
 import { BrowserRouter, Miss, Match } from 'react-router';
 
 import './css/style.css';
-// import './css/blurb.css';
+import './css/blurb.css';
 
 import App from './components/App';
 import NotFound from './components/NotFound';
