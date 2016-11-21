@@ -4,6 +4,8 @@ import Inventory from './Inventory';
 import Order from './Order';
 import sampleFishes from '../sample-fishes';
 import Fish from './Fish';
+//import firebase
+import base from '../base'
 
 class App extends React.Component {
   constructor() {
@@ -17,6 +19,19 @@ class App extends React.Component {
       fishes: {},
       order: {}
     };
+  }
+  //https://github.com/tylermcginnis/re-base#syncstateendpoint-options
+  componentWillMount() {
+    const syncLink = `${this.props.params.dashboardId}/fishes`;
+    this.ref = base.syncState(syncLink, {
+      context: this,
+      state: 'fishes',
+      asArrat: true
+    });
+  }
+  //https://github.com/tylermcginnis/re-base#syncstateendpoint-options
+  componentWillUnmount() {
+    base.removeBinding(this.ref);
   }
 
   loadSamples() {
