@@ -4,15 +4,24 @@ import React from 'react';
 const Header = (props) => {
   return (
     <header className="top">
-    <h2>
-      Blurb DashBoard
-    </h2>
-    <h5 className="tagline">
+    <h1>
+      Catch
+      <span className="ofThe">
+        <span className="of">of</span>
+        <span className="the">the</span>
+      </span>
+      Day
+    </h1>
+    <h3 className="tagline">
       <span>{props.tagline}</span>
-    </h5>
+    </h3>
     </header>
   )
 }
 
+//validations
+Header.propTypes = {
+  tagline: React.PropTypes.string.isRequired
+}
 
 export default Header;

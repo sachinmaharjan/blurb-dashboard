@@ -103,7 +103,7 @@ class App extends React.Component {
     return (
       <div className="catch-of-the-day">
         <div className="menu">
-          <Header tagline="Freshly Refresh"/>
+          <Header tagline={"Fresh Market"}/>
           <ul className="list-of-fishes">
             { Object
               .keys(this.state.fishes)
@@ -125,6 +125,11 @@ class App extends React.Component {
       </div>
     )
   }
+}
+
+//validations for where ever props is declared
+App.propTypes = {
+  params: React.PropTypes.object.isRequired
 }
 
 export default App;

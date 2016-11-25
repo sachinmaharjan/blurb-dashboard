@@ -24,4 +24,11 @@ class Fish extends React.Component {
   }
 }
 
+//validations for where ever props is declared
+Fish.propTypes = {
+  details: React.PropTypes.object.isRequired,
+  index: React.PropTypes.string.isRequired,
+  addToOrder: React.PropTypes.func.isRequired
+}
+
 export default Fish;
