@@ -121,6 +121,7 @@ class App extends React.Component {
           updateFish={this.updateFish}
           removeFish={this.removeFish}
           loadSamples={this.loadSamples}
+          dashboardId={this.props.dashboardId}
           fishes={this.state.fishes}/>
       </div>
     )
@@ -130,6 +131,7 @@ class App extends React.Component {
 //validations for where ever props is declared
 App.propTypes = {
   params: React.PropTypes.object.isRequired
+  // dashboardId: React.PropTypes.string.isRequired
 }
 
 export default App;
